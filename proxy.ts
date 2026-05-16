@@ -9,7 +9,7 @@ import type { NextRequest } from "next/server";
  * - Rate limiting headers are set upstream (e.g. by Vercel / Cloudflare)
  * - CORS is handled here for preflight requests
  */
-export function middleware(request: NextRequest) {
+export function proxy(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
   if (request.method === "OPTIONS" && pathname.startsWith("/api/")) {
