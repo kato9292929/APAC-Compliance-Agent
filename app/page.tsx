@@ -28,28 +28,22 @@ function CountryCard({ flag, name, sources, price, gold }: {
   flag: string; name: string; sources: string[]; price: string; gold?: boolean;
 }) {
   return (
-    <div className="flex flex-col gap-4 rounded-2xl p-6 border transition-colors duration-200"
-         style={{ background: "#111111", borderColor: "#1a1a1a" }}
-         onMouseEnter={e => (e.currentTarget as HTMLElement).style.borderColor = "rgba(59,130,246,0.5)"}
-         onMouseLeave={e => (e.currentTarget as HTMLElement).style.borderColor = "#1a1a1a"}>
-      <div className="flex items-center gap-3">
-        <span className="text-2xl">{flag}</span>
-        <span className="font-semibold text-white">{name}</span>
+    <div className="bg-[#111111] border border-[#1a1a1a] rounded-2xl p-6
+                    hover:border-blue-500/50 transition-colors duration-200
+                    flex flex-col gap-4 w-full">
+      <div className="flex items-center gap-3 mb-0">
+        <span className="text-3xl leading-none">{flag}</span>
+        <span className="text-white font-bold text-lg leading-tight">{name}</span>
       </div>
-      <ul className="flex flex-col gap-1.5 flex-1">
+      <div className="flex flex-col gap-1 flex-1">
         {sources.map((s) => (
-          <li key={s} className="text-xs"
-              style={{ color: "#888888", fontFamily: "var(--font-geist-mono)" }}>
-            {s}
-          </li>
+          <p key={s} className="text-[#888888] text-sm font-mono">{s}</p>
         ))}
-      </ul>
-      <div className="pt-4 border-t" style={{ borderColor: "#1a1a1a" }}>
-        <span className="text-sm font-bold"
-              style={{ color: gold ? "#d4af37" : "#00ff87" }}>
-          {price}
-        </span>
       </div>
+      <p className="font-bold text-sm"
+         style={{ color: gold ? "#d4af37" : "#00ff87" }}>
+        {price}
+      </p>
     </div>
   );
 }
@@ -176,7 +170,7 @@ export default function Home() {
            style={{ color: "#888888", fontFamily: "var(--font-geist-mono)" }}>
           World AgentKit × x402 Protocol
         </p>
-        <h1 className="text-4xl md:text-5xl font-bold leading-tight mb-5"
+        <h1 className="text-3xl md:text-4xl font-bold leading-tight mb-5"
             style={{ letterSpacing: "-0.025em" }}>
           APAC 5カ国の法人照合・
           <br />
@@ -226,7 +220,7 @@ export default function Home() {
               対応5カ国 + 複数国同時照合
             </h2>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full">
             {countries.map((c) => <CountryCard key={c.name} {...c} />)}
           </div>
         </div>
