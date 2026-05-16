@@ -170,8 +170,8 @@ export default function Home() {
            style={{ color: "#888888", fontFamily: "var(--font-geist-mono)" }}>
           World AgentKit × x402 Protocol
         </p>
-        <h1 className="text-3xl md:text-4xl font-bold leading-tight mb-5"
-            style={{ letterSpacing: "-0.025em" }}>
+        <h1 className="text-2xl md:text-3xl font-bold leading-tight mb-5"
+            style={{ letterSpacing: "-0.02em" }}>
           APAC 5カ国の法人照合・
           <br />
           <span style={{ color: "#3b82f6" }}>AMLスクリーニング</span>
